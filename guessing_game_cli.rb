@@ -1,20 +1,12 @@
 def run_guessing_game
-  # generate and store random number between 1 and 6
-  random_number = rand(1..6)
-  # prompt user to enter their number
-  puts "Enter a number between 1 and 6:"
-  # capture user input
+  random_number = rand(6) + 1 # <-- Cannot give it as a range i.e. rand(1..6) as the test will reject it, but using a range is viable code outside of this restriction.
+  puts "Guess a number between 1 and 6."
   user_input = gets.chomp
-  # compare numbers and give one of three results
- 
-  while user_input
-    if random_number == user_input
-      puts "You guessed the correct number!"
-    elsif user_input == "exit"
-      puts "Goodbye!"
-      break
-    else
-      puts "Sorry, the computer guessed #{random_number}"
-    end
+  if user_input == random_number.to_s
+    puts "You guessed the correct number!"
+  elsif  
+    puts "Goodbye!"
+  else
+      puts "Sorry! The computer guessed #{random_number}."
   end
 end
